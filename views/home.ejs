@@ -1,0 +1,30 @@
+<% include partials/header %>
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome To ESNTLS!</h1>
+             <p>View our hand-picked products from all over the world</p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% products.forEach(function(product){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= product.image %>">
+                   <div class="caption">
+                       <h4><%= product.name %></h4>
+                   </div>
+                   <div >
+                       <h4><%= product.price %></h4>
+                   </div>
+                   <div class="btn">
+                       <h4><a href="/products/<%= product._id %>/buy/new">Buy Now</a></h4> <h4><a href="/products/<%= product._id %>">More info</a></h4>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include partials/footer %>

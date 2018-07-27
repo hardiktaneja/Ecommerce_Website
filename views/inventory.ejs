@@ -1,0 +1,70 @@
+<% include partials/header %>
+
+
+<!--<div class="container row text-center">-->
+<!--    <a class="btn btn-primary btn-large" href="/products/new">Add New Product</a>-->
+<!--</div>-->
+
+<% if(CurrentUser.username == "Hardik") { %>
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome To Owners Page!</h1>
+         </div>
+              <div class="container row text-center">
+        <a class="btn btn-primary btn-large" href="/products/new">Add New Product</a>
+    </div>
+     </header>
+
+</div>
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">All Orders</div>
+  <!--<div class="panel-body">-->
+  <!--</div>-->
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+        <th>Order Id</th>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Customer Address</th>
+        <th>Customer Pincode</th>
+    </tr>
+    <% orders.forEach(function(order){ %>
+        <tr>
+            <td>
+                <%=order._id %>
+            </td>
+            <td>
+                <%=order.cus_product %>
+            </td>
+            <td>
+                <%=order.cus_product_name %>
+            </td>
+            <td>
+                <%=order.cus_address %>
+            </td>
+            <td>
+                <%=order.cus_pincode %>
+            </td>
+        </tr>
+    <% }); %>
+  </table>
+</div>
+<% } %>
+
+
+<%  if(CurrentUser.username != "Hardik")  { %>
+<h1>Only Owner can Access this page</h1>
+<% } %>
+
+
+<!--<div class = "btn-danger">-->
+<!--    <a href="/logout">Log Out</a>-->
+<!--</div>-->
+<% include partials/footer %>

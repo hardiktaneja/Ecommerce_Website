@@ -1,0 +1,37 @@
+<% include partials/header %>
+
+<h1>< Payment Info Page also needs to be added But I have skipped it in this Exercise ></h1>
+
+<div class="container">
+    <div class="row">
+    <h1 style="text-align:center;">You are ordering <%= product.name%></h1>
+        <div style="width:30%; margin:25px auto;">
+            <form action="/products/<%= product._id%>/buy" method ="POST">
+                <div class="form-group">
+                    <label>Name:</label>
+                        <input  class="form-control"type="text" name="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                        <label>Address</label>
+                        <input  class="form-control"type="text" name="address" placeholder="Address">
+                </div>
+                <div class="form-group">
+                        <label>Pincode</label>
+                        <input  class="form-control"type="number" name="pincode" placeholder="Pincode (Eg. 121001)">
+                </div>
+                <div class="form-group">
+                        <label>Phone Number</label>
+                        <input  class="form-control"type="number" name="phone" placeholder="Phone no.">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+           </form>
+           <a href="/">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
+
+

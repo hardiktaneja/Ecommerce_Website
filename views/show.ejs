@@ -1,0 +1,47 @@
+<% include partials/header %>
+
+
+<div class="container">
+        <div class="col-md-12">
+            <div class="thumbnail">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 text-center"><h4><a><%= product.name %></a></h4></div>
+            </div>
+                
+                <img class="image-responsive" src="<%= product.image %>">
+                <div class="caption-full">
+                   <div class="row">
+                        <h4><div class="col-lg-6 col-lg-offset-3 text-center"><%= product.price %> </div></h4>
+                    </div>
+                   <div class="row">
+                        <h4><div class="col-lg-6 col-lg-offset-3 text-center"><a href="/products/<%= product._id %>/buy/new">Buy Now</a></div></h4>
+                    </div>
+
+                    <p><%= product.description %></p>
+                </div>
+            </div>
+            
+            <div class = "thumbnail">
+                
+                <p>
+                    <a class="btn btn-success" href="/products/<%= product._id %>/comments/new">Add New Comment</a>
+                </p>
+
+                <% product.comments.forEach(function(comment){ %>
+                    <p>
+                        <strong><%= comment.author %></strong> - <%= comment.text %>
+                    </p>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+
+<% include partials/footer %>
